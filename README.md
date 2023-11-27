@@ -12,18 +12,22 @@ Current sources:
 
 Install [Python 3.9 or higher](https://www.python.org/)
 
+Install the dependencies via `pip`.
+
 Run `dashboard.py`, either with command line or through opening with Python.
 
 Select an option and enter a username to analyze. The results will be saved to a file in the working directory.
 
-### Linux
+### Commands
 
 ```sh
+pip3 install -r requirements.txt
 python3 dashboard.py
 ```
 
-### Windows
+Or the following (depends on system configuration):
 
 ```sh
+pip install -r requirements.txt
 python dashboard.py
 ```
