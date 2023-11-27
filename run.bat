@@ -16,10 +16,13 @@ if [%PIP] NEQ [] (
 )
 
 if [%PYTHON] NEQ [] (
+    py -m playwright install
     py dashboard.py
 ) else if [%PYTHON3] NEQ [] (
+    python3 -m playwright install
     python3 dashboard.py
 ) else (
+    python -m playwright install
     python dashboard.py
 )
 

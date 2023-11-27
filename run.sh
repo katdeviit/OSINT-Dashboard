@@ -7,7 +7,9 @@ fi
 
 
 if [[ $(which python3) != 0 ]]; then
+    python3 -m playwright install
     python3 dashboard.py
 else
+    python -m playwright install
     python dashboard.py
 fi
