@@ -1,2 +1,0 @@
-def open():
-    print("TikTok")
