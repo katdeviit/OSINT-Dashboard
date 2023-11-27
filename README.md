@@ -18,12 +18,13 @@ Select an option and enter a username to analyze. The results will be saved to a
 
 ### Commands
 
-Install the dependencies via `pip`.
+Install the dependencies via `pip`. Install playwright's additional dependencies for TikTok support.
 
 Run `dashboard.py`, either with command line or through opening with Python.
 
 ```sh
 pip3 install -r requirements.txt
+python3 -m playwright install
 python3 dashboard.py
 ```
 
@@ -31,5 +32,6 @@ Or the following (depends on system configuration):
 
 ```sh
 pip install -r requirements.txt
+python -m playwright install
 python dashboard.py
 ```

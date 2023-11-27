@@ -22,3 +22,5 @@ if [%PYTHON] NEQ [] (
 ) else (
     python dashboard.py
 )
+
+PAUSE

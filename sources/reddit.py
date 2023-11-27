@@ -1,2 +1,6 @@
+import tkinter
+from . import util
+
 def open():
-    print("Reddit")
+    print("Opening Reddit")
+    window = util.create_window("Reddit")
