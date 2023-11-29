@@ -10,7 +10,7 @@ Current sources:
 
 ## Usage
 
-Install [Python 3.9 or higher](https://www.python.org/)
+Install [Python 3.11 or higher](https://www.python.org/)
 
 **Execute `run.bat` or `run.sh`**, or alternatively try the "Commands" section.
 
@@ -23,15 +23,15 @@ Install the dependencies via `pip`. Install playwright's additional dependencies
 Run `dashboard.py`, either with command line or through opening with Python.
 
 ```sh
-pip3 install -r requirements.txt
-python3 -m playwright install
-python3 dashboard.py
+pip install -r requirements.txt
+python -m playwright install
+python dashboard.py
 ```
 
 Or the following (depends on system configuration):
 
 ```sh
-pip install -r requirements.txt
-python -m playwright install
-python dashboard.py
+pip3 install -r requirements.txt
+python3 -m playwright install
+python3 dashboard.py
 ```

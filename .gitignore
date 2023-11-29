@@ -8,3 +8,6 @@ __pycache__/
 
 # Results
 /data/
+
+# Debug data
+debug.log
