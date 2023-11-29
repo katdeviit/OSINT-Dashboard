@@ -87,6 +87,52 @@ class User:
         self.__extract_from_data()
         return resp
 
+    async def following(self, **kwargs) -> dict:
+        """
+        Returns a dictionary of following information associated with this User.
+
+        Returns:
+            dict: A dictionary of following information associated with this User.
+
+        Raises:
+            InvalidResponseException: If TikTok returns an invalid response, or one we don't understand.
+
+        Example Usage:
+            .. code-block:: python
+
+                user_data = await api.user(secuid='fSDFJSDKFSDJKLF').info()
+        """
+
+        sec_uid = getattr(self, "sec_uid", None)
+        if not sec_uid:
+            raise TypeError(
+                "You must provide the secuid when creating this class to use this method."
+            )
+
+        url_params = {
+            "secUid": sec_uid,
+            "msToken": kwargs.get("ms_token"),
+            "count": 30,
+            "from_page": "user",
+            "focus_state": True,
+            "history_len": 5,
+            "aid": 1988
+        }
+
+        resp = await self.parent.make_request(
+            url="https://www.tiktok.com/api/user/list/",
+            params=url_params,
+            headers=kwargs.get("headers"),
+            session_index=kwargs.get("session_index"),
+        )
+
+        if resp is None:
+            raise InvalidResponseException(resp, "TikTok returned an invalid response.")
+
+        self.as_dict = resp
+        self.__extract_from_data()
+        return resp
+
     async def videos(self, count=30, cursor=0, **kwargs) -> Iterator[Video]:
         """
         Returns a user's videos.
