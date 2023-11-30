@@ -59,7 +59,7 @@ async def get_user_info(username, client_id, client_secret):
     global bar
     global fetch_status
     util.do_pickle("reddit", RedditFields(username, client_id, client_secret))
-    fname = f"reddit-{username}.json"
+    fname = f"reddit-user-{username}.json"
     user_agent = 'MyRedditApp/1.0 (by /u/yourusername)'
     #print(client_id)
     #print(client_secret)
