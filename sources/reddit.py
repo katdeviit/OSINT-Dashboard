@@ -81,6 +81,7 @@ async def get_user_info(username, client_id, client_secret):
         util.write_data(fname, comments_data)
         if bar is not None:
             progress.set(100)
+        await reddit.close()
         messagebox.showinfo("Success!", f"Successfully retrieved profile information. Saved to {fname}")
     except Exception as e:
         print(e)
