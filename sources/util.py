@@ -4,7 +4,6 @@ import io
 import json
 import asyncio
 import threading
-import os
 import pickle
 from pathlib import Path
 

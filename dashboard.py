@@ -15,7 +15,7 @@ def main():
     title = tkinter.Label(window, text="Welcome to OSINT Dashboard!", font='Helvetica 18 bold').pack()
     tkinter.Label(window, text="Please select an option.").pack()
     tkinter.Button(text="TikTok", command=tiktok.open).pack()
-    tkinter.Button(text="Reddit", command=reddit.open).pack()
+    tkinter.Button(text="Reddit", command=reddit.open_reddit).pack()
     tkinter.Button(text="X (Twitter)", command=x.open).pack()
     window.mainloop()
 
