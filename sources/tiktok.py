@@ -72,12 +72,16 @@ async def get_user_info(username, ms_token):
             if bar is not None:
                 progress.set(100)
             messagebox.showinfo("Success!", f"Successfully retrieved profile information. Saved to {fname}")
-            bar.destroy()
-            bar = None
+            if bar is not None:
+                bar.destroy()
+                bar = None
         except Exception as e:
             print(e)
             if e == "TikTokException.__init__() missing 2 required positional arguments: 'raw_response' and 'message'":
                 print("Try retrieving a new msToken after refreshing page, it may have changed.")
                 print("You may have also been rate limited by TikTok. Try changing your IP via a VPN.")
+            if bar is not None:
+                bar.destroy()
+                bar = None
             messagebox.showerror("Error", "Error retrieving profile. See console output for error.")
           

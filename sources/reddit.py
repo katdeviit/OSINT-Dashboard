@@ -83,10 +83,12 @@ async def get_user_info(username, client_id, client_secret):
             progress.set(100)
         await reddit.close()
         messagebox.showinfo("Success!", f"Successfully retrieved profile information. Saved to {fname}")
-    except Exception as e:
-        print(e)
-        messagebox.showerror("Error", "Error retrieving profile. See console output for error.")
-    finally:
         if bar is not None:
             bar.destroy()
             bar = None
+    except Exception as e:
+        print(e)
+        if bar is not None:
+            bar.destroy()
+            bar = None
+        messagebox.showerror("Error", "Error retrieving profile. See console output for error.")

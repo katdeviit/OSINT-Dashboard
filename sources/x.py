@@ -74,11 +74,13 @@ def get_user_info(username):
         if bar is not None:
             progress.set(100)
         messagebox.showinfo("Success!", f"Successfully retrieved profile information. Saved to {fname}")
-        bar.destroy()
-        bar = None
+        if bar is not None:
+            bar.destroy()
+            bar = None
     except Exception as e:
         print(e)
-        bar.destroy()
-        bar = None
+        if bar is not None:
+            bar.destroy()
+            bar = None
         messagebox.showerror("Error", "Error retrieving profile. See console output for error.")
           
