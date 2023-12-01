@@ -77,11 +77,11 @@ async def get_user_info(username, ms_token):
                 bar = None
         except Exception as e:
             print(e)
-            if e == "TikTokException.__init__() missing 2 required positional arguments: 'raw_response' and 'message'":
+            if str(e) == "TikTokException.__init__() missing 2 required positional arguments: 'raw_response' and 'message'":
                 print("Try retrieving a new msToken after refreshing page, it may have changed.")
                 print("You may have also been rate limited by TikTok. Try changing your IP via a VPN.")
             if bar is not None:
                 bar.destroy()
                 bar = None
-            messagebox.showerror("Error", "Error retrieving profile. See console output for error.")
+            messagebox.showerror("Error", "Invalid username." if str(e) == "'user'" else "Error retrieving profile. See console output for error.")
           
